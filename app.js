@@ -47,10 +47,10 @@ function scrape(url){
                 if (link !== undefined){
                     if (link.substr(0,4) !== "http"){
                         link = method + "//" + domain + link;
-                        created_at = new Date().getTime();
-                        query = "INSERT INTO queue (url, created_at) VALUES ('" + link + "', '" + created_at + "')";
-                        connection.query(query);
                     }
+                    created_at = new Date().getTime();
+                    query = "INSERT INTO queue (url, created_at) VALUES ('" + link + "', '" + created_at + "')";
+                    connection.query(query);
                 }
             });
         } 
