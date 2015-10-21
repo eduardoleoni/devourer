@@ -65,7 +65,7 @@ function getNew(){
         if (err) throw err;
 
         scrape(rows[0].url);
-        connection.query('DELETE FROM queue WHERE id =' + rows[0].id);
+        connection.query('DELETE FROM queue WHERE url = "' + rows[0].url + '"');
     });
 }
 
